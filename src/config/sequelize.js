@@ -1,7 +1,7 @@
 import {Sequelize} from 'sequelize';
 
 export const conexion = new Sequelize(
-  "almacen",
+  "proyectobackend",
   "root",//username
   "root",//password
   {
