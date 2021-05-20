@@ -1,7 +1,7 @@
 import {DataTypes} from "sequelize";
 import {conexion} from "../config/sequelize";
 
-export default () => conexion.define("categorias",{
+export default () => conexion.define("categoria",{
   categoriaId:{
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -22,5 +22,5 @@ export default () => conexion.define("categorias",{
 {
   tableName:"categorias",
   timestamps: true,
-}
+},
 );

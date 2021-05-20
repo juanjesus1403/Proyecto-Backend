@@ -1,7 +1,7 @@
 import {DataTypes} from "sequelize";
 import {conexion} from "../config/sequelize";
 
-export default() => conexion.define("roles",{
+export default () => conexion.define("roles",{
   rolesId: {
     primaryKey:true,
     type:DataTypes.INTEGER,

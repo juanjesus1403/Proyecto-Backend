@@ -23,12 +23,12 @@ export default () => conexion.define("persona",{
     field: "correo",
   },
   personaPassword:{
-    type: DataTypes.TEXT(12),
+    type: DataTypes.STRING(12),
     field: "password",
   },
 },
 {
-  tableName:"Persona",
+  tableName:"persona",
   timestamps: false,
 }
 )

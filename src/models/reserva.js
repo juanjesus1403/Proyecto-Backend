@@ -5,6 +5,7 @@ export default () => conexion.define("reserva",{
   reservaId:{
     primaryKey: true,
     unique: true,
+    field: "id",
     type:DataTypes.INTEGER,
     allowNull:false,
     autoIncrement:true,

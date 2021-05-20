@@ -38,4 +38,4 @@ export default () => conexion.define("locales",
     createdAt: "fecha_creacion",
     updatedAt: "ultima_modificacion",
   }
-);9
+);
