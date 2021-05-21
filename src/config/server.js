@@ -2,6 +2,7 @@ import express from "express";
 import {json} from "body-parser";
 import {conexion} from "./sequelize";
 import {locales_router} from "../routes/locales";
+import {persona_router} from "../routes/persona";
 
 export default class Server {
   constructor(){
@@ -17,6 +18,7 @@ export default class Server {
 
   rutas(){
     this.app.use(locales_router);
+    this.app.use(persona_router);
   }
   start(){
     // sirve para levantar el servidor en el cual le tenemos que pasar el puerto y si todo es exitoso ingresaremos al callback(segundo parametro)
@@ -29,8 +31,7 @@ export default class Server {
         await conexion.sync({force:false});
         console.log("Base de datos sincronizada correctamente");
       } catch (error){
-        console.error(error);
-  
+        console.error(error);  
       }
     });
   }
