@@ -3,7 +3,7 @@ import {Sequelize} from 'sequelize';
 export const conexion = new Sequelize(
   "proyectobackend",
   "root",//username
-  "root",//password
+  "mollendo2021",//password
   {
       dialect: "mysql",
       host: "127.0.0.1",

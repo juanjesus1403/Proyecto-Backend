@@ -10,13 +10,13 @@ export default () => conexion.define("categoria",{
     autoIncrement: true,
     field: "id",
   },
-  categoriaRestaurante:{
+  categoriaNombre:{
     type: DataTypes.STRING(45),
-    field:"restaurantes",
+    field:"nombre",
   },
-  categoriaEstacionamiento:{
+  categoriaDescripcion:{
     type: DataTypes.STRING(45),
-    field: "estacionamientos",
+    field: "descripción",
   },
 },
 {

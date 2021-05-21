@@ -35,12 +35,12 @@ Persona.belongsTo(Roles,{
 
 Locales.hasMany(Reserva,{
   foreignKey: {
-    name: "reserva_id",
+    name: "locales_id",
     allowNull: false, 
   },
 });
 
 Reserva.belongsTo(Locales,{
-  foreignKey: "reserva_id",
+  foreignKey: "locales_id",
 });
 

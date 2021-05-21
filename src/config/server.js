@@ -1,17 +1,22 @@
 import express from "express";
 import {json} from "body-parser";
 import {conexion} from "./sequelize";
-import {Categoria} from "./relaciones";
+import {locales_router} from "../routes/locales";
 
 export default class Server {
   constructor(){
     this.app = express();
     this.port = process.env.PORT || 8000;
     this.bodyParser();
+    this.rutas();
   }
   bodyParser(){
     //sirve para configurar la forma en la cual el API REST va a recibir datos del front mediante el body
     this.app.use(json());
+  }
+
+  rutas(){
+    this.app.use(locales_router);
   }
   start(){
     // sirve para levantar el servidor en el cual le tenemos que pasar el puerto y si todo es exitoso ingresaremos al callback(segundo parametro)
