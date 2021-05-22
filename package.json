@@ -6,8 +6,8 @@
   "author": "Juan Jesus Enciso <juanjesus_eq96@hotmail.com>",
   "scripts": {
     "start:dev": "nodemon --exec babel-node ./src/index.js",
-    "build": "babel src/ --out-dir build",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "build": "babel src/ --out-dir build"
   },
   "license": "MIT",
   "dependencies": {
@@ -17,7 +17,8 @@
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.2",
