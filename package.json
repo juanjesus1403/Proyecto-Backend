@@ -6,6 +6,7 @@
   "author": "Juan Jesus Enciso <juanjesus_eq96@hotmail.com>",
   "scripts": {
     "start:dev": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel src/ --out-dir build",
     "start": "node ./src/index.js"
   },
   "license": "MIT",
