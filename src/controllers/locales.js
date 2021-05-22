@@ -1,4 +1,5 @@
 import {Locales} from "../config/relaciones"
+import locales from "../models/locales";
 
 //CRUD
 
@@ -6,7 +7,7 @@ export const crearLocales = async (req, res) =>{
     
     try{
         const validacion = new RegExp(/^[a-zA-Z ]+$/);
-        if (validacion.test(req.body.productoNombre)){
+        if (validacion.test(req.body.localesNombre)){
             const nuevoLocal = await Locales.create(req.body);
             return res.status(201).json({ 
                 success: true,
@@ -44,4 +45,45 @@ export const listarLocales = async (req, res) => {
         message: "Error al devolver los locales",
       });
     }
-  };
+};
+
+export async function actualizarLocales(req,res){
+  const {id} = req.params;
+  const {nombre, descripcion, distrito, latitud, longitud} = req.body
+
+  const Local = await locales.findAll({
+    attributes: ['nombre', 'descripcion', 'distrito', 'latitud', 'longitud'],
+    where: {
+      id
+    }
+  })  
+  Local.forEach(async () =>{
+    await locales.update({        
+      nombre,
+      descripcion,
+      distrito,
+      latitud,
+      longitud
+      })
+      
+    })
+  
+
+  return res.json({
+    mesaage: 'Local actualizado',
+    data: Local
+  })
+  
+};
+
+export async function eliminarLocales(req,res){
+  const {id} = req.params;
+  const locales = await Locales.destroy({
+    where: {
+      id
+    }
+  });
+  res.json({
+    message: 'Local eliminado'
+  })
+};

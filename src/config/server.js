@@ -3,6 +3,8 @@ import {json} from "body-parser";
 import {conexion} from "./sequelize";
 import {locales_router} from "../routes/locales";
 import {persona_router} from "../routes/persona";
+import {reserva_router} from "../routes/reserva";
+import {categoria_router} from "../routes/categoria"
 
 export default class Server {
   constructor(){
@@ -19,6 +21,8 @@ export default class Server {
   rutas(){
     this.app.use(locales_router);
     this.app.use(persona_router);
+    this.app.use(reserva_router);
+    this.app.use(categoria_router);
   }
   start(){
     // sirve para levantar el servidor en el cual le tenemos que pasar el puerto y si todo es exitoso ingresaremos al callback(segundo parametro)

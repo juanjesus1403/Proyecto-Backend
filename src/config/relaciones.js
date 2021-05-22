@@ -11,6 +11,8 @@ export const Persona = persona_model();
 export const Reserva = reserva_model();
 export const Roles = roles_model();
 
+
+
 Categoria.hasMany(Locales,{
   foreignKey:{
     name: "categorias_id",
@@ -43,4 +45,18 @@ Locales.hasMany(Reserva,{
 Reserva.belongsTo(Locales,{
   foreignKey: "locales_id",
 });
+
+Persona.hasMany(Reserva,{
+  foreignKey: {
+    name: "persona_id",
+    allowNull:false,
+  }
+})
+
+Reserva.belongsTo(Persona,{
+  foreignKey: "persona_id"
+})
+
+Reserva.sync({force:true})
+
 
