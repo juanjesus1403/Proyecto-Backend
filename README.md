@@ -24,11 +24,15 @@ Herramientas 🖇️
 - Sequelize
 - Babel
 
+Deploy(Heroku):
+
+https://proyecto-backend-bukea.herokuapp.com/
+
 
 
 Este proyecto está desarrollado por 📄:
 
-Victor Romero
-Paul Cordova
-Juan Enciso
+- Victor Romero
+- Paul Cordova
+- Juan Enciso
 
