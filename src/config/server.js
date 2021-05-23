@@ -24,7 +24,7 @@ export default class Server {
     this.app.use(reserva_router);
     this.app.use(categoria_router);
     this.app.get("/", (req, res) => {
-      res.send("Bienvenido a mi API :grinning:");
+      res.send("Bienvenido a mi API ");
     });
 
   }
