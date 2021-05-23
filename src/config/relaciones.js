@@ -57,6 +57,6 @@ Reserva.belongsTo(Persona,{
   foreignKey: "persona_id"
 })
 
-Reserva.sync({force:true})
+// Categoria.sync({force:true})
 
 
