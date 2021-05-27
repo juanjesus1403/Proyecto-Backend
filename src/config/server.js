@@ -11,8 +11,22 @@ export default class Server {
     this.app = express();
     this.port = process.env.PORT || 8000;
     this.bodyParser();
+    this.CORS();
     this.rutas();
   }
+  CORS() {
+    this.app.use((req, res, next) => {
+      // Permitir los origenes (dominios) para que puedan consultar a mi API
+      res.header("Access-Control-Allow-Origin", "*");
+      // Permitir las cabeceras siguientes
+      res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+      // Permitir los metodos siguientes
+      res.header("Access-Control-Allow-Methods", "GET, POST, PUT");
+      // Si todo cumple con lo estipulado anteriormente
+      next();
+    });
+  }
+  
   bodyParser(){
     //sirve para configurar la forma en la cual el API REST va a recibir datos del front mediante el body
     this.app.use(json());
