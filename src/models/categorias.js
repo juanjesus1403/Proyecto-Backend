@@ -14,10 +14,6 @@ export default () => conexion.define("categoria",{
     type: DataTypes.STRING(45),
     field:"nombre",
   },
-  categoriaDescripcion:{
-    type: DataTypes.STRING(45),
-    field: "descripción",
-  },
 },
 {
   tableName:"categorias",
